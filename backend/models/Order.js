@@ -8,7 +8,8 @@ const Order = new mongoose.Schema({
     description:String,
     price: Number,
     done: Boolean,
-    rating, Number
+    rating, Number,
+    rDescription: String
 },{collection:"order"});
 
 module.exports = mongoose.model('order', Order);

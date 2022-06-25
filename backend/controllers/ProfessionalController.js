@@ -1,35 +1,38 @@
-const Costumer = require('../models/Costumer')
+const Professional = require('../models/Professional')
 const mongoose = require('mongoose')
 const bcrypt = require('bcrypt')
 
 module.exports = {
     async read(req, res){
-        const list = await Costumer.find()
+        const list = await Professional.find()
         return res.json(list)
     },
 
     async findByEmail(){
         const {email} = req.params
-        const user = await Costumer.findOne({email : email})
-        if(!user){
+        const professional = await Professional.findOne({email : email})
+        if(!professional){
             return res.status(404).json({ msg: "user not found"})
         }
-        return res.json(user);
+        return res.json(professional);
     },
 
 
     async create(req,res){
-        const {name,email,cpf,phone,password} = req.body
-        if(!name || !email || !cpf || !phone || !password){
+        const {name,email,cpf,description,phone,branch,rating,password} = req.body
+        if(!name || !email || !cpf || !description || !phone || !phone || !branch || !password){
             return res.status(400).json({ error: "missing information!" });
         }
         let passwordHash = bcrypt.hashSync(password,5)
-        const ConstumerCreated = await Costumer.create({
+        const ConstumerCreated = await Professional.create({
             name,
             email,
             cpf,
+            description,
             phone,
-            password:passwordHash,
+            branch,
+            rating,
+            passord: passwordHash
         })
         return res.json(ConstumerCreated)
     },
@@ -38,19 +41,19 @@ module.exports = {
         if(!mongoose.Types.ObjectId.isValid(id)){
             return res.status(401).json({error: "Costumer not found"})
         }
-        const CostumerDeleted = await Costumer.findOneAndDelete({_id:id})
-        return res.json(CostumerDeleted)
+        const ProfessionalDeleted = await Professional.findOneAndDelete({_id:id})
+        return res.json(ProfessionalDeleted)
     },
     async login(req,res){
         const {email, password} = req.body
-        const costumer = await Costumer.findOne({email:email})
-        if (!costumer) {
+        const professional = await Professional.findOne({email:email})
+        if (!professional) {
             return res.status(404).json({ msg: "User not found" })
         }
-        if(!(bcrypt.compare(password, costumer.password))){
+        if(!await bcrypt.compare(password, professional.password)){
             return res.status(404).json({ result: false });
         }
-        return res.status(401).json({ result: true });
+        return res.status(404).json({ result: true });
 
 
     }
