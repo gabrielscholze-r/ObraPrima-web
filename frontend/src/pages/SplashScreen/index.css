@@ -11,8 +11,13 @@ body {
   align-items: center;
   height: 100%;
   background-color: #0c29d0;
+  border: 2px solid yellow;
+  border-top: 0;
+  border-bottom:0;
 }
 .splashPage {
+  /* border: 3px solid yellow; */
+  filter: drop-shadow(3px 3px 0 yellow);
   /* border: 0.2rem solid black;
     border-radius: 1rem; */
 
@@ -23,9 +28,9 @@ body {
 .description {
 }
 .login-button {
-  border: 1px solid #0c29d0;
+  border: 2px solid #0c29d0;
   width: 15rem;
-  color: white;
+  color: yellow;
   font-family: "Poppins", sans-serif;
   background-color: #0c29d0;
   transition: 0.3s;
@@ -36,7 +41,7 @@ body {
 }
 
 .register-button {
-  border: 1px solid #0c29d0;
+  border: 2px solid #0c29d0;
   width: 15rem;
   color: #0c29d0;
   font-family: "Poppins", sans-serif;
@@ -45,10 +50,13 @@ body {
 }
 .register-button:hover {
   filter: none;
-  color: white;
+  color: yellow;
   background-color: #0c29d0;
 }
 .description {
   color: #0c29d0;
   font-size: 2rem;
+}
+.aux-div{
+  filter: drop-shadow(1px 1px 0 black);
 }
