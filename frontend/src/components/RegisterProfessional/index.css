@@ -1,0 +1,65 @@
+.desciption{
+    width: 80%;
+    resize: none;
+    border: 2px solid #0c29d0;
+    background-color: #0c29d0;
+    color: yellow;
+}
+.desciption::placeholder{
+    color: white;
+}
+.desciption:focus{
+    outline: 0;
+    border-color: yellow;
+}
+.name-register{
+    width: 80%;
+    border: 2px solid #0c29d0;
+    background-color: #0c29d0;
+    color:yellow;
+}
+.name-register:focus{
+    outline: 0;
+    border-color: yellow;
+
+}
+.name-register::placeholder{
+    color: white;
+}
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none; 
+}
+.RegisterCostumer{
+    display: block;
+}
+.register-button-active{
+    border: 2px solid #0c29d0;
+    background-color: #0c29d0;
+    color: yellow;
+    font-size: 2rem;
+    transition: 0.2s;
+}
+.register-button-active:hover{
+    background-color: white;
+    color: #0c29d0;
+}
+.branch-selector{
+    
+    width: 80%;
+    color: white;
+    cursor: pointer;
+    background-color: #0c29d0;
+    font-size: 1.5rem;
+}
+.branch-selector option{
+    background-color: white;
+    border: 2px solid black;
+    color: #0c29d0;
+    cursor: pointer;
+}
+.branch-selector option:disabled{
+    display: none;
+}

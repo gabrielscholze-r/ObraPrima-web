@@ -1,0 +1,34 @@
+.name-register{
+    width: 80%;
+    border: 2px solid #0c29d0;
+    background-color: #0c29d0;
+    color:yellow;
+}
+.name-register:focus{
+    outline: 0;
+    border-color: yellow;
+
+}
+.name-register::placeholder{
+    color: white;
+}
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none; 
+}
+.RegisterCostumer{
+    display: block;
+}
+.register-button-active{
+    border: 2px solid #0c29d0;
+    background-color: #0c29d0;
+    color: yellow;
+    font-size: 2rem;
+    transition: 0.2s;
+}
+.register-button-active:hover{
+    background-color: white;
+    color: #0c29d0;
+}

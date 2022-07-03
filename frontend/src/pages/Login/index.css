@@ -1,7 +1,7 @@
 @import "//netdna.bootstrapcdn.com/font-awesome/3.0/css/font-awesome.css";
 
 .Login {
-  font-weight: 600;
+  font-weight: bold;
   font-family: "Poppins", sans-serif, FontAwesome;
   width: 100%;
   position: fixed;
@@ -48,6 +48,7 @@ header.login-header {
   width: 60%;
 }
 .login-title {
+  font-weight: bolder;
   font-size: 3rem;
   color: #0c29d0;
 }
