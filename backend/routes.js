@@ -7,7 +7,7 @@ routes.get('/costumer', CostumerController.read)
 routes.post('/costumer', CostumerController.create)
 routes.delete('/costumer/:id', CostumerController.delete)
 routes.get('/costumer/find/:email',CostumerController.findByEmail)
-routes.get('/costumer/auth', CostumerController.login)
+routes.post('/costumer/auth', CostumerController.login)
 
 
 const ProfessionalController = require('./controllers/ProfessionalController')

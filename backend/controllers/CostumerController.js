@@ -45,12 +45,14 @@ module.exports = {
         const {email, password} = req.body
         const costumer = await Costumer.findOne({email:email})
         if (!costumer) {
-            return res.status(404).json({ msg: "User not found" })
+            console.log(costumer)
+            return res.status(200).json({ msg: "User not found" })
         }
-        if(!(bcrypt.compare(password, costumer.password))){
-            return res.status(404).json({ result: false });
+        if(!(await bcrypt.compare(password, costumer.password))){
+            return res.status(200).json({ result: false });
+        }else{
+            return res.status(200).json({ result: true });
         }
-        return res.status(401).json({ result: true });
 
 
     }

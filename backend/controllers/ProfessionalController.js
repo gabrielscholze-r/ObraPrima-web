@@ -39,7 +39,7 @@ module.exports = {
     async delete(req,res){
         const {id} = req.params
         if(!mongoose.Types.ObjectId.isValid(id)){
-            return res.status(401).json({error: "Costumer not found"})
+            return res.status(404).json({error: "Costumer not found"})
         }
         const ProfessionalDeleted = await Professional.findOneAndDelete({_id:id})
         return res.json(ProfessionalDeleted)
@@ -51,9 +51,9 @@ module.exports = {
             return res.status(404).json({ msg: "User not found" })
         }
         if(!await bcrypt.compare(password, professional.password)){
-            return res.status(404).json({ result: false });
+            return res.status(200).json({ result: false });
         }
-        return res.status(404).json({ result: true });
+        return res.status(200).json({ result: true });
 
 
     }
