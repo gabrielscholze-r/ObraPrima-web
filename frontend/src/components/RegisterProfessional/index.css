@@ -63,3 +63,11 @@ input[type=number]::-webkit-outer-spin-button {
 .branch-selector option:disabled{
     display: none;
 }
+.ramo_servico{
+    width: max-content;
+    border-bottom: 1px solid #0c29d0;
+    color: #0c29d0;
+    font-weight: 100;
+    font-size: 1.3rem;
+    margin: auto;
+}

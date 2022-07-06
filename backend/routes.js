@@ -12,11 +12,11 @@ routes.post('/costumer/auth', CostumerController.login)
 
 const ProfessionalController = require('./controllers/ProfessionalController')
 
-routes.get('/professioal', ProfessionalController.read)
-routes.post('/professioal', ProfessionalController.create)
-routes.delete('/professioal/:id', ProfessionalController.delete)
-routes.get('/professioal/find/:email',ProfessionalController.findByEmail)
-routes.get('/professioal/auth', ProfessionalController.login)
+routes.get('/professional', ProfessionalController.read)
+routes.post('/professional', ProfessionalController.create)
+routes.delete('/professional/:id', ProfessionalController.delete)
+routes.get('/professional/find/:email',ProfessionalController.findByEmail)
+routes.get('/professional/auth', ProfessionalController.login)
 
 const OrderController = require('./controllers/OrderController')
 
