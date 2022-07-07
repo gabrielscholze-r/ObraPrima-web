@@ -31,6 +31,8 @@ function Login() {
       console.log(isAuthenticated.data.result)
       if(isAuthenticated.data.result){
         swal.fire({icon:'success',title: 'LOGOU!',text: 'Você está autenticado!!'})
+        setID(email)
+        history('/Home')
       }else{
         swal.fire({icon: 'error',title: 'Ops...',text: 'Email ou senha incorretos!!'})
       }
