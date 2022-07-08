@@ -1,0 +1,21 @@
+.Homepage{
+    font-family: "Poppins", sans-serif, FontAwesome;
+}
+.homepage-button{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.logoff-button {
+    background-color: white;
+    color: #0c29d0;
+    height: fit-content;
+    transition: 0.2s;
+    border: 3px solid #0c29d0;
+  }
+  .logoff-button:hover {
+    font-weight: bolder;
+    background-color: #0c29d0;
+    color: yellow;
+    border: 3px solid yellow;
+  }
