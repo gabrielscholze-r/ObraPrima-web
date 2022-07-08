@@ -6,6 +6,7 @@ import withReactContent from 'sweetalert2-react-content';
 import { useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import API from '../../config/API'
+import RegisterProvider from '../../config/ContextRegister';
 
 
 function Login() {
@@ -13,6 +14,7 @@ function Login() {
   const [email, setEmail] = useState("")
   const [password, setSenha] = useState("")
   const [id, setID] = useContext(AuthProvider)
+  const [type, setType] = useContext(RegisterProvider)
   let history = useNavigate()
   if (id != "" && id != undefined) {
     history('/Home')
@@ -22,18 +24,26 @@ function Login() {
       swal.fire({icon: 'error',title: 'Ops...',text: 'Forneça email e senha!!'})
     }
     else{
-      console.log(email)
-      console.log(password)
       var isAuthenticated = await API.post('costumer/auth',{
         email, 
         password
       })
-      console.log(isAuthenticated.data.result)
       if(isAuthenticated.data.result){
+        setType(0)
         swal.fire({icon:'success',title: 'LOGOU!',text: 'Você está autenticado!!'})
         setID(email)
         history('/Home')
       }else{
+        isAuthenticated = await API.post("professional/auth",{
+          email,
+          password
+        })
+        if(isAuthenticated.data.result){
+          setType(1)
+          swal.fire({icon:'success',title: 'LOGOU!',text: 'Você está autenticado!!'})
+          setID(email)
+          history('/Home')
+        }
         swal.fire({icon: 'error',title: 'Ops...',text: 'Email ou senha incorretos!!'})
       }
     }
